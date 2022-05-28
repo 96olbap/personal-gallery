@@ -52,5 +52,8 @@ class ImageTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.new_image,Image))
 
+    # def test_get_image_by_category(self):
+
+
     
 

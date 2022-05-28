@@ -29,3 +29,19 @@ class Image(models.Model):
 
     def save_image(self):
         self.save()
+    class Meta:
+        ordering = ['uploaded_at']
+
+    def delete_image(self):
+        self.delete()
+
+    def get_image_by_id(self,id):
+        return self.objects.get(id=id)
+
+    @classmethod
+    def search_image(cls,category):
+        return cls.objects.filter(category__name__icontains=category)
+
+    @classmethod
+    def filter_by_location(cls,location):
+        return cls.objects.filter(location__name__icontains=location)
