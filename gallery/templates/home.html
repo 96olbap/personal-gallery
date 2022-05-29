@@ -1,24 +1,21 @@
-{%extends 'base.html'%} {% block content %} {{block.super}}
+{% extends 'base.html' %} {% block content %}
+<h1 class="text-center">Gallery | personal</h1>
 
-<div class="container">
-
-    <!-- Looping through images   -->
-    {% for img in image %}
-
-    <div class="row">
-        <!-- displaying Images -->
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <h2 class="text-center"> {{ img.image }} </h2>
+<section>
+    <div class="container-fluid">
+        <div class="container-xxl">
+            <div class="row">
+                {% for img in images %}
+                <div class="row">
+                    <img src="{{img.image.url}}" alt="{{img.description}}">
+                </div>
+                {% empty %}
+                <div class="row">
+                    <h2 class="text-center">There No Images to show.</h2>
+                </div>
+                {% endfor %}
+            </div>
         </div>
-
     </div>
-
-    {% empty %}
-    <div class="row">
-        <h2 class="text-center">There No Images to show.</h2>
-    </div>
-    {% endfor %}
-
-</div>
-
+</section>
 {% endblock %}
