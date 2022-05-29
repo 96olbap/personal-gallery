@@ -9,12 +9,18 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save_category(self):
+        self.save()
         
 class Location(models.Model):
     name = models.CharField(max_length=150)
 
     def __str__(self):
         return self.name
+
+    def save_location(self):
+        self.save()
 
 class Image(models.Model):
     image = models.ImageField(upload_to = 'uploads/', default='Wepukhulu')
@@ -35,8 +41,6 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()
 
-    def get_image_by_id(self,id):
-        return self.objects.get(id=id)
 
     @classmethod
     def search_image(cls,category):

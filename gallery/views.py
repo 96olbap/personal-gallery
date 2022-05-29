@@ -4,4 +4,6 @@ from .models import Image,Location,Category
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    location = Image.location
+    image = Image.filter_by_location(location)
+    return render(request, 'home.html', {'location':location, 'img':image})
