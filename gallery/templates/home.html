@@ -7,7 +7,10 @@
             <div class="row">
                 {% for img in images %}
                 <div class="row">
-                    <img src="{{img.image.url}}" alt="{{img.description}}">
+                    <img src="{{img.image.url}}" alt="{{img.description}}" class="img-fluid">
+                    <div class="copy-url">
+                        <button>Copy link</button>
+                    </div>
                 </div>
                 {% empty %}
                 <div class="row">

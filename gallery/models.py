@@ -1,6 +1,7 @@
 from tkinter import CASCADE
 from django.db import models
 from django.forms import CharField
+import pyperclip
 
 # Create your models here.
 
@@ -55,3 +56,8 @@ class Image(models.Model):
     def all_images(cls):
         images = cls.objects.all()
         return images
+
+    @classmethod
+    def get_img_by_id(cls, id):
+        image = cls.objects.get(id = id)
+        pyperclip.copy(image.image.url)
