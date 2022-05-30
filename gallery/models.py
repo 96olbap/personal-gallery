@@ -14,6 +14,13 @@ class Category(models.Model):
 
     def save_category(self):
         self.save()
+
+    def delete_category(self):
+        self.delete()
+
+    @classmethod
+    def update_category(cls,id):
+        return cls.objects.get(id=id)
         
 class Location(models.Model):
     name = models.CharField(max_length=150)
@@ -23,6 +30,13 @@ class Location(models.Model):
 
     def save_location(self):
         self.save()
+    
+    def delete_location(self):
+        self.delete()
+
+    @classmethod
+    def update_location(cls,id):
+        return cls.objects.get(id=id)
 
 class Image(models.Model):
     image = CloudinaryField('image')
@@ -59,5 +73,10 @@ class Image(models.Model):
 
     @classmethod
     def get_img_by_id(cls, id):
+        image = cls.objects.get(id = id)
+        return image
+
+    @classmethod
+    def update_image(cls, id):
         image = cls.objects.get(id = id)
         return image
