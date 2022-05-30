@@ -70,8 +70,22 @@ class ImageTestClass(TestCase):
         self.assertTrue(isinstance(self.new_image,Image))
 
     def test_save_image(self):
+        '''
+        test_save_image test case to test if the image is added to the database
+        '''
         images = Image.objects.all()
         self.assertTrue(len(images) > 0)
+
+    def test_delete_image(self):
+        '''
+        test_delete_image test case to test if the image is deleted from the database
+        '''
+
+    def test_get_img_by_id(self):
+        '''
+        test_get_img_by_id test case to test if the image url is copied
+        '''
+        
 
 
     

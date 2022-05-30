@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Image,Location,Category
 
 # Create your views here.
@@ -21,3 +21,4 @@ def search_results(request):
     else:
         message = "You have not searched for any category"
         return render(request, 'base-app/search.html', {"message": message})
+

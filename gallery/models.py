@@ -2,6 +2,7 @@ from tkinter import CASCADE
 from django.db import models
 from django.forms import CharField
 import pyperclip
+import cloudinary
 
 # Create your models here.
 
@@ -36,12 +37,11 @@ class Image(models.Model):
 
     def save_image(self):
         self.save()
-    class Meta:
-        ordering = ['uploaded_at']
 
     def delete_image(self):
         self.delete()
-
+    class Meta:
+        ordering = ['uploaded_at']
 
     @classmethod
     def search_image(cls,search_category):
@@ -61,3 +61,4 @@ class Image(models.Model):
     def get_img_by_id(cls, id):
         image = cls.objects.get(id = id)
         pyperclip.copy(image.image.url)
+        paste = pyperclip.paste()
