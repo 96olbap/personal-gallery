@@ -2,7 +2,7 @@ from tkinter import CASCADE
 from django.db import models
 from django.forms import CharField
 import pyperclip
-import cloudinary
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -25,7 +25,7 @@ class Location(models.Model):
         self.save()
 
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'uploads/', default='Wepukhulu')
+    image = CloudinaryField('image')
     name = models.CharField(max_length=100)
     description = models.TextField(max_length = 50,blank = True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
@@ -60,5 +60,4 @@ class Image(models.Model):
     @classmethod
     def get_img_by_id(cls, id):
         image = cls.objects.get(id = id)
-        pyperclip.copy(image.image.url)
-        paste = pyperclip.paste()
+        return image

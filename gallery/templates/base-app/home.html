@@ -1,4 +1,4 @@
-{% extends 'base-app/base.html' %} {% block styles %} {{ block.super }}
+{% extends 'base-app/base.html' %} {% load static %} {% block styles %} {{ block.super }}
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> {% endblock %} {% block content %}
 
 <div class="container container-fluid">
@@ -10,7 +10,8 @@
                     <img src="{{img.image.url}}" class="card-img" alt="{{img.description}}" class="img-fluid">
                     <div class="card-img-overlay">
                         <p id="copy-url">
-                            <a href="#" class="card-text"><i class="medium material-icons">content_copy</i></a>
+                            <input style="height:1px; width:1px;visibility: hidden" type="text" value='{{ img.image.url }}' id="image-link-id">
+                            <a href="#" onclick="myFunction()" class="card-text"><i class="medium material-icons">content_copy</i></a>
                         </p>
                     </div>
                 </div>
@@ -22,6 +23,6 @@
 
     </section>
 </div>
-<!-- <script src="/app/static/scripts/register.js"></script> -->
+<script src="{% static 'scripts/main.js' %}"></script>
 
 {% endblock %}
