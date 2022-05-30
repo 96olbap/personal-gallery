@@ -3,6 +3,9 @@
     border: 2px solid black;
     display: flex;
     flex-direction: column;
+    background: rgba(233, 230, 230, .5);
+    margin: 10px;
+    border-radius: 6px;
 }
 
 .card {
@@ -11,8 +14,37 @@
     background-color: rgba(0, 0, 0, .5);
 }
 
-.copy-url {
-    background: none;
-    margin: 0.5rem;
-    text-align: center;
+body {
+    background: rgb(255, 236, 236);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#intro {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+
+#intro:hover {
+    text-decoration: underline;
+}
+
+#copy-url {
+    border-radius: 4px;
+    background: black;
+    margin: 0.5px;
+    padding: 1px;
+    width: fit-content;
+    height: fit-content;
+    transition: transform .2s;
+}
+
+#copy-url:hover {
+    transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    -webkit-transform: scale(1.25);
+}
+
+.medium {
+    color: white;
 }
