@@ -3,14 +3,11 @@ from django.shortcuts import render
 from .models import Image,Location,Category
 
 # Create your views here.
-# def home(request):
-#     images = Image.all_images()
-
-#     print(images)
-#     return render(request, 'home.html', {'images':images})
 def home(request):
+    images = Image.all_images()
 
-    return render(request, 'base-app/home.html')
+    print(images)
+    return render(request, 'base-app/home.html', {'images':images})
 
 def search_results(request):
 

@@ -1,29 +1,25 @@
 {% extends 'base-app/base.html' %} {% block content %}
 
-<!-- <section>
-    <div class="container-fluid">
-        <div class="container-xxl">
-            <div class="row">
+<div class="container container-fluid">
+    <section id="main">
+        <div class="row">
+            <div class="col-md-6">
                 {% for img in images %}
-                <div class="row">
-                    <img src="{{img.image.url}}" alt="{{img.description}}" class="img-fluid">
-                    <div class="copy-url">
-                        <button>Copy link</button>
+                <div class="card" style="width: 18rem; height: fit-content">
+                    <div class="card-body">
+                        <img src="{{img.image.url}}" alt="{{img.description}}" class="img-fluid">
+                        <div class="copy-url">
+                            <a href="#" class="btn btn-outline-dark">copy link</a>
+                        </div>
                     </div>
                 </div>
-
+                {% empty %}
+                <h2 class="no-img">There No Images to show.</h2>
+                {% endfor %}
             </div>
-            {% empty %}
-            <div class="row">
-                <h2 class="text-center">There No Images to show.</h2>
-            </div>
-            {% endfor %}
         </div>
-    </div>
-</section> -->
 
-<div class="container container-fluid">
-    <h1>Hello app</h1>
+    </section>
 </div>
 
 {% endblock %}

@@ -1,3 +1,18 @@
-h1 {
-    color: red;
+#main {
+    padding: 10px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    padding: 1px;
+    margin: 1rem;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.copy-url {
+    background: none;
+    margin: 0.5rem;
+    text-align: center;
 }
