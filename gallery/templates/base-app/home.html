@@ -1,7 +1,6 @@
-{% extends 'base.html' %} {% block content %}
-<h1 class="text-center">Gallery | personal</h1>
+{% extends 'base-app/base.html' %} {% block content %}
 
-<section>
+<!-- <section>
     <div class="container-fluid">
         <div class="container-xxl">
             <div class="row">
@@ -12,13 +11,19 @@
                         <button>Copy link</button>
                     </div>
                 </div>
-                {% empty %}
-                <div class="row">
-                    <h2 class="text-center">There No Images to show.</h2>
-                </div>
-                {% endfor %}
+
             </div>
+            {% empty %}
+            <div class="row">
+                <h2 class="text-center">There No Images to show.</h2>
+            </div>
+            {% endfor %}
         </div>
     </div>
-</section>
+</section> -->
+
+<div class="container container-fluid">
+    <h1>Hello app</h1>
+</div>
+
 {% endblock %}
