@@ -75,29 +75,31 @@ body {
     /* Black w/ opacity */
 }
 
+.modal-header .close {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    float: right;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
 
-/* Modal Content */
+
+/* Modal body */
 
 .modal-body {
-    /* background-color: #fefefe; */
+    background-color: rgba(0, 0, 0, 0.5);
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid white;
     width: 80%;
 }
 
 
 /* The Close Button */
 
-.close-button {
-    color: black;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-button:hover {
+.close:hover {
     color: #000;
-    border: 1.5px solid black;
     cursor: pointer;
 }

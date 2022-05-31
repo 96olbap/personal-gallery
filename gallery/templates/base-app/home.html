@@ -8,12 +8,11 @@
             <div class="col-md-6">
                 <div class="card bg-dark text-white" style="width: 18rem; height: fit-content">
                     <img src="{{img.image.url}}" class="card-img" alt="{{img.description}}" class="img-fluid">
-                    <div class="card-img-overlay">
+                    <div class="card-img-overlay" id="myBtn">
                         <p id="copy-url">
                             <input style="height:1px; width:1px;visibility: hidden" type="text" value='{{ img.image.url }}' id="image-link-id">
                             <a href="#" onclick="myFunction()" class="card-text"><i class="medium material-icons">content_copy</i></a>
                         </p>
-                        <button id="myBtn">details</button>
                         <!-- The Modal -->
                         <div id="myModal" class="modal">
                             <!-- modal header -->
@@ -22,8 +21,9 @@
                                 <span class="close">&times;</span>
                             </div>
                             <!-- Modal content -->
-                            <div class="modal-body">
+                            <div class="modal-body" style="width:fit-content; height: fit-content;">
                                 <h3> Image Details</h3>
+                                <img src="{{img.image.url}}" class="card-img" alt="{{img.description}}" class="img-fluid" style="width: 24rem; height: 25rem;">
                                 <p class="modal-description">
                                     Description: {{ img.description }}
                                 </p>
@@ -52,25 +52,3 @@
 <script src="{% static 'scripts/main.js' %}"></script>
 
 {% endblock %}
-
-<!-- <div class="modal" id="modal">
-    <div class="modal-header">
-        <div class="title">{{ img.name }}</div>
-        <button data-close-button class="close-button">&times;</button>
-    </div>
-    <div class="modal-body">
-        <img class="modal-img" src="{{ img.image.url }}" alt="{{ img.description }}">
-        <p class="modal-description">
-            {{ img.description }}
-        </p>
-        <p class="modal-location">
-            {{ img.location }}
-        </p>
-        <p class="modal-category">
-            {{ img.category }}
-        </p>
-        <p class="modal-posted-at">
-            {{ img.uploaded_at }}
-        </p>
-    </div>
-</div> -->
